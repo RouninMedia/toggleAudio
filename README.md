@@ -65,7 +65,7 @@ ______
 ## JavaScript
 
 ```javascript
-const audioIcon = document.querySelector('.audio');
+let audioIcon;
 
 
 const conditionalPlay = (audioFile) => {
@@ -122,6 +122,8 @@ const toggleAudio = (e) => {
 
 
 const initialiseAudio = () => {
+
+  audioIcon = document.querySelector('.audio');
 
   if (localStorage.getItem('appSettings') === null) {
 
