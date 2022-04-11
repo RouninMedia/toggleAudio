@@ -5,7 +5,7 @@ ______
 
 ## HTML
 
-```
+```html
 <button type="button" class="audio">
   <span class="audio-off --active"></span>
   <span class="audio-on"></span>
@@ -17,7 +17,7 @@ ______
 
 ## CSS
 
-```
+```css
 
 .audio {
   position: absolute;
