@@ -64,8 +64,9 @@ ______
 
 ## JavaScript
 
-```
+```javascript
 const audioIcon = document.querySelector('.audio');
+
 
 const conditionalPlay = (audioFile) => {
 
@@ -74,6 +75,7 @@ const conditionalPlay = (audioFile) => {
     audioFile.play();
   }
 }
+
 
 const speakText = (announcement, lang = 'en-GB', volume = 1, pitch = 0.95, rate = 0.88) => {
 
@@ -117,6 +119,7 @@ const toggleAudio = (e) => {
     localStorage.setItem('appSettings', JSON.stringify(appSettings));
   }
 }
+
 
 audioIcon.addEventListener('click', toggleAudio, false);
 
