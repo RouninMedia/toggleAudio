@@ -65,6 +65,71 @@ ______
 ## JavaScript
 
 ```
+const audioIcon = document.querySelector('.audio');
+
+const conditionalPlay = (audioFile) => {
+
+  if (JSON.parse(localStorage.getItem('appSettings')).audio === true) {
+
+    audioFile.play();
+  }
+}
+
+const speakText = (announcement, lang = 'en-GB', volume = 1, pitch = 0.95, rate = 0.88) => {
+
+  const vocalText = new SpeechSynthesisUtterance();
+  vocalText.pitch = pitch;
+  vocalText.rate = rate;
+  vocalText.volume = volume;
+  vocalText.lang = lang;
+  vocalText.text = announcement;
+  window.speechSynthesis.speak(vocalText);
+}
+
+
+const toggleAudio = (e) => {
+
+  e.target.blur();
+
+  const audioOn = e.target.getElementsByClassName('audio-on')[0];
+  const audioOff = e.target.getElementsByClassName('audio-off')[0];
+  
+  audioOn.classList.toggle('--active');
+  audioOff.classList.toggle('--active');
+
+
+  let appSettings = JSON.parse(localStorage.getItem('appSettings'));
+    
+  if (audioOn.classList.contains('--active')) {
+  
+    appSettings.audio = true;
+    localStorage.setItem('wordis3hSettings', JSON.stringify(appSettings));
+    
+    if (e.isTrusted === true) {
+
+      speakText('Audio on.');
+    }
+  }
+
+  else {
+
+    appSettings.audio = false;
+    localStorage.setItem('appSettings', JSON.stringify(appSettings));
+  }
+}
+
+audioIcon.addEventListener('click', toggleAudio, false);
+
+
+if (localStorage.getItem('appSettings') === null) {
+
+  localStorage.setItem('appSettings', '{"audio": false}');
+}
+
+else if (JSON.parse(localStorage.getItem('appSettings')).audio === true) {
+
+  audioIcon.click();
+}
 
 ```
 
