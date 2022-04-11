@@ -121,18 +121,22 @@ const toggleAudio = (e) => {
 }
 
 
+const initialiseAudio = () => {
+
+  if (localStorage.getItem('appSettings') === null) {
+
+    localStorage.setItem('appSettings', '{"audio": false}');
+  }
+
+  else if (JSON.parse(localStorage.getItem('appSettings')).audio === true) {
+
+    audioIcon.click();
+  }
+}
+
+
 audioIcon.addEventListener('click', toggleAudio, false);
-
-
-if (localStorage.getItem('appSettings') === null) {
-
-  localStorage.setItem('appSettings', '{"audio": false}');
-}
-
-else if (JSON.parse(localStorage.getItem('appSettings')).audio === true) {
-
-  audioIcon.click();
-}
+window.addEventListener('load', initialiseAudio);
 
 ```
 
