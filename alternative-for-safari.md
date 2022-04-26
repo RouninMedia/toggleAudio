@@ -1,5 +1,8 @@
 # Alternative `toggleAudio` for Safari
-It appears that older versions of Safari don't support the CSS `backface-visibility` property.
+Older versions of Safari don't support the CSS `backface-visibility` property.
+
+ - <a href="https://caniuse.com/?search=backface-visibility" target="_blank">https://caniuse.com/?search=backface-visibility</a>
+
 Below is an alternative cross-browser version of `toggleAudio` which supports Safari.
 
 ______
