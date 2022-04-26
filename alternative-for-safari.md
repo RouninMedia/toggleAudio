@@ -93,12 +93,12 @@ ______
 
 .audio-off.\--active {
   opacity: 0.2;
-  transform: rotateY(360deg);
+  transform: rotateY(0deg);
 }
 
 .audio-on.\--active {
   opacity: 1;
-  transform: translateX(1px) rotateY(360deg);
+  transform: rotateY(0deg);
 }
 
 ```
