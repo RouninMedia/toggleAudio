@@ -85,20 +85,17 @@ ______
   opacity: 0;
   pointer-events: none;
   transform: rotateY(180deg);
-  transition: transform 0.3s linear, opacity 0.6s ease-out 0.3s;
-}
-
-.audio-on.\--active {
-  opacity: 1;
+  transition: transform 0.3s linear, opacity 0s linear 0.15s;
 }
 
 .audio-off.\--active {
   opacity: 0.2;
+  transform: rotateY(360deg);
 }
 
-.audio-off.\--active,
 .audio-on.\--active {
-  transform: rotateY(360deg);
+  opacity: 1;
+  transform: translateX(1px) rotateY(360deg);
 }
 
 ```
